@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Gondoro Gaming</title>
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="shortcut icon" href="/img/image-removebg-preview.png">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+	<!---NAVBAR --->
+	<header class="header">
+		<div class="logo">
+			<img src="./img/logoheader.png" alt="logo de la marca">
+		</div>
+		<nav>
+			<ul class="nav-links">
+				<li><a href="#">Ingresar</a></li>
+				<li><a href="#">Productos</a></li>
+				<li><a href="#">Carrito</a></li>
+				<li><a href="#">Marcas</a></li>
+			</ul>
+		</nav>
+		<a href="#" class="btn"><button>Contact</button></a>
+	</header>
+
+	<!---NAVBAR 2--->
+	<div class="wrapper">
+		<div class="multi_color_border"></div>
+		<div class="top_nav">
+			<div class="left">
+			 
+		  </div>
+		  <div class="razer">
+			<img src="./img/descarga__2_-removebg-preview.png">
+			</div> 
+			<div class="aorus"> 
+			<img src="./img/descarga__3_-removebg-preview (1).png">
+			</div>
+			<div class="msi"> 
+				<img src="./img/msi-logo-2.png">
+				</div>
+				<div class="hyperx"> 
+					<img src="./img/hyperx_logo (1).png">
+					</div>
+					<div class="corsair"> 
+						<img src="./img/corsairlogo.png">
+						</div>
+						<div class="logitech"> 
+							<img src="./img/bab78b1ab6202c17519384fb90b06412.png">
+							</div>
+							
+		</div>
+	
+	
+	  </div>
+	</div>
+
+
+	<!---CARROUSEL--->
+	<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+		  <div class="carousel-item active" data-bs-interval="10000">
+			<img src="./img/banner1.png" class="d-block w-100" alt="...">
+		  </div>
+		  <div class="carousel-item" data-bs-interval="2000">
+			<img src="./img/banner2.png" class="d-block w-100" alt="...">
+		  </div>
+		  <div class="carousel-item">
+			<img src="./img/banner3.png" class="d-block w-100" alt="...">
+		  </div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Next</span>
+		</button>
+	  </div>
+		<!--CARRITO-->
+		<div class="container">
+			<h1>Carrito</h1>
+			<hr>
+			
+			<!-- Tabla - Productos del Carrito -->
+			<div class="tabla-calculo" id="tabla-calculo">
+			  <table class="tabla">
+				<caption class="titulo-tabla">Productos en el carrito</caption>
+				<thead class="cabecera border-top-right">
+				  <tr>
+					<th class="border-top-left">Nombre Producto</th>
+					<th>Cantidad</th>
+					<th>Precio Unitario</th>
+					<th class="border-top-right">Precio Total</th>
+				  </tr>
+				</thead>
+				<tbody id="carrito-body">
+			
+				</tbody>
+				<tfoot id="footer">
+				  <tr><td class="border-bottom-left border-bottom-right" colspan = 4>¡No hay ningun elemento en el carrito!</td></tr>
+				</tfoot>
+			  </table>
+			</div>
+			<!-- Template de las filas -->
+			<template id="agregar-producto-al-carro">
+			  <tr>
+					<td id="producto">Mouse</td>
+					<td><button id="menos-cantidad" class="button">-</button><span id="cant">1</span><button id='mas-cantidad' class="button">+</button></td>
+					<td class="precio-tabla" id="precio-uni">4500</td>
+					<td class="precio-tabla" id="precio-total-prod">4500</td>
+				  </tr>
+			</template>
+			<!-- Template del footer de la tabla -->
+			<template id="tfooter">
+			  <tr class="none">
+				<td colspan = 2 class="border-bottom-left"><button id="vaciar-tabla" class="button">Vaciar carrito</button></td>
+				<td class="negrita">Precio Total</td>
+				<td id="total-a-pagar" class="precio-tabla border-bottom-right negrita">5.00</td>
+			  </tr>
+			</template>
+			
+			<!-- Aqui se insertan las cards de productos con javascript-->
+			<div class="contenedor-productos">
+			  
+			</div>
+			
+			<!-- template del producto -->
+			<template id="template-prod">
+			  <article class="cartola">
+			   <!-- Imagen del producto -->
+			   <div class="contenedor-img">
+				<img src="" alt="">
+			   </div>
+			   <!-- Nombre y descripción del producto -->
+			   <div class="div-info">
+				 <h2 class="nombre-prod">Nombre Producto</h2>
+				 <hr class="separador">
+				 <p class="descripcion-prod">Descripción producto</p>
+			   </div>
+			   <!-- Precio y Agregar al carrito -->
+			   <div class="div-precio-boton">
+				  <p class="precio">precio Producto</p>
+				  <button onclick ="pololo()" class="boton">Agregar</button>
+			   </div>
+			  </article>
+			</template>
+			<div class="wrapper">
+				<div class="multi_color_border"></div>
+			
+			</div>
+
+			<!---Apartado de marcas-->
+			<div class="marcas">
+				<h1>Las mejores marcas</h1>
+			</div>
+
+			<main>
+
+				
+		
+				<div class="container__box">
+					
+					<div class="box">
+						<i class="lni lni-amazon"></i>
+						<img src="./img/corsairlogo.png">
+						<h5>CORSAIR</h5>
+						<h4>CORSAIR</h4>
+					</div>
+					<div class="box">
+						<i class="lni lni-spotify"></i>
+						<img src="./img/hyperx_logo (1).png">
+						<h5>HYPERX</h5>
+						<h4>HYPERX</h4>
+					</div>
+					<div class="box">
+						<i class="lni lni-app-store"></i>
+						<img src="./img/msi-logo-1.png">
+						<h5>MSI</h5>
+						<h4>MSI</h4>
+					</div>
+					<div class="box">
+						<i class="lni lni-behance"></i>
+						<h5>RAZER</h5>
+						<h4>RAZER</h4>
+					</div>
+					<div class="box">
+						<i class="lni lni-chrome"></i>
+						<h5>AORUS</h5>
+						<h4>AORUS</h4>
+					</div>
+					<div class="box">
+						<i class="lni lni-css3"></i>
+						<h5>LOGITECH</h5>
+						<h4>LOGITECH</h4>
+					</div>
+					<div class="box">
+						<i class="lni lni-html5"></i>
+						<h5>GIGABYTE</h5>
+						<h4>GIGABYTE</h4>
+					</div>
+					<div class="box">
+						<i class="lni lni-github"></i>
+						<h5>INTEL</h5>
+						<h4>INTEL</h4>
+					</div>
+					<div class="box">
+						<i class="lni lni-paypal"></i>
+						<h5>HP</h5>
+						<h4>HP</h4>
+					</div>
+					<div class="box">
+						<i class="lni lni-play-store"></i>
+						<h5>EVGA</h5>
+						<h4>EVGA</h4>
+					</div>
+				</div>
+				<div class="wrapper">
+					<div class="multi_color_border"></div>
+				
+				</div>
+		
+				
+			</main>
+			<!--Contacto-->
+				<div class="contact">
+					<form class="my-form">
+						<div class="container">
+						  <h1>Contactanos!</h1>
+						  <ul>
+							<li>
+							  <select>
+								<option selected disabled>-- Please choose an option --</option>
+								<option>Request Quote</option>
+								<option>Send Resume</option>
+								<option>Other</option>      
+							  </select>
+							</li>
+							<li>
+							  <div class="grid grid-2">
+								<input type="text" placeholder="Nombre" required>  
+								<input type="text" placeholder="Apeliido" required>
+							  </div>
+							</li>
+							<li>
+							  <div class="grid grid-2">
+								<input type="email" placeholder="Email" required>  
+								<input type="tel" placeholder="Celular">
+							  </div>
+							</li>    
+							<li>
+							  <textarea placeholder="Mensaje"></textarea>
+							</li>   
+							<li>
+							  <input type="checkbox" id="terms">
+							  <label for="terms">He leído los <a href="">terminos y condiciones.</a></label>
+							</li>  
+							<li>
+							  <div class="grid grid-3">
+								<div class="required-msg">REQUIRED FIELDS</div>
+								<button class="btn-grid" type="submit" disabled>
+								  <span class="back">
+									<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/email-icon.svg" alt="">
+								  </span>
+								  <span class="front">SUBMIT</span>
+								</button>
+					<button class="btn-grid" type="reset" disabled>
+								  <span class="back">
+									<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/eraser-icon.svg" alt="">
+								  </span>
+								  <span class="front">RESET</span>
+								</button> 
+							  </div>
+							</li>    
+						  </ul>
+						</div>
+					  </form>
+					</div>
+				
+            <!--FOOTER-->
+			<footer	ter class="pie-pagina">
+			<div class="grupo-1">
+				<div class="boxi">
+					<figure>
+						<a href="#">
+							<img src="./img/Gonzalo_Joyas__6_-removebg-preview.png"  alt="Logo de Gondoro Gaming">
+						</a>
+					</figure>
+				</div>
+				
+				<div class="boxi">
+					<h2>SOBRE NOSOTROS</h2>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia, suscipit!</p>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia, suscipit!</p>
+				</div>
+				<div class="boxi">
+					<h2>SIGUENOS</h2>
+					<div class="red-social">
+						<a href="#" class="fa fa-facebook"></a>
+						<a href="#" class="fa fa-instagram"></a>
+						<a href="#" class="fa fa-twitter"></a>
+						</div>
+					</div>
+				</div>
+			<div class="grupo2">
+				<small>&copy; 2022 <b>Gondoro Gaming</b> - Todos los derechos reservados.</small>
+			</div>
+			</footer>
+
+
+
+		
+				<script>const checkbox = document.querySelector('.my-form input[type="checkbox"]');
+					const btns = document.querySelectorAll(".my-form button");
+					
+					checkbox.addEventListener("change", function() {
+					  const checked = this.checked;
+					  for (const btn of btns) {
+						checked ? (btn.disabled = false) : (btn.disabled = true);
+					  }
+					});</script>
+
+
+
+
+
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+				<script src="app.js"></script>
+				<!--FONT AWESOME-->
+				<script src="https://kit.fontawesome.com/4a8ea40775.js" crossorigin="anonymous"></script>
+    <!---LINKEADO A CDN DE BOOSTRAP--->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+</body>
+</html>

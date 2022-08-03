@@ -1,0 +1,43 @@
+[
+    {
+      "precio": 4500,
+      "id": 1,
+      "title": "Mouse"
+
+    },
+    {
+        "precio": 11999,
+        "id": 2,
+        "title": "Teclado"
+      },
+    {
+      "precio": 120000,
+      "id": 3,
+      "title": "Placa de video"
+    },
+    {
+      "precio": 8200,
+      "id": 4,
+      "title": "Headset"
+    },
+    {
+      "precio": 39999,
+      "id": 5,
+      "title": "Silla gamer"
+    },
+    {
+        "precio": 29999,
+        "id": 6,
+        "title": "Monitor gamer"
+      },
+      {
+          "precio": 150000,
+          "id": 7,
+          "title": "Combo gamer"
+        },
+        {
+            "precio": 79999,
+            "id": 8,
+            "title": "Laptop gamer"
+          }
+  ]
